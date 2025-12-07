@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharpest Operator — Jim Simons</title>
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body>
+
+<!-- Full-screen background -->
+<section class="hero">
+    <img 
+        src="img/001-jimsimon.jpg" 
+        alt="Jim Simons" 
+        class="hero-bg"
+        onerror="this.src='https://images.unsplash.com/photo-1543857770-724574971ca3?q=80&w=1000&auto=format&fit=crop'"
+    >
+</section>
+
+<!-- BLUE BLOCK -->
+<div class="blue-block wrapper">
+    <h3 class="small-so">SO</h3>
+    <p class="sub-label">Sharpest Operator</p>
+    <hr class="hr-small">
+
+    <img src="img/ic-arrow-down.svg" alt="Arrow Down" class="arrow-icon">
+
+    <p class="operator-id">Operator #001</p>
+    <p class="operator-name">Jim Simons</p>
+</div>
+
+<!-- RED BLOCK -->
+<div class="red-block wrapper">
+    <h1 class="title">
+        The Quietest Man<br>
+        Who Bent the Market
+    </h1>
+
+    <hr class="hr-medium">
+
+    <nav class="toc">
+
+        <a href="jimsimons/index.html#overview" class="toc-link">
+            <h2>1. Operator Overview</h2>
+        </a>
+
+        <a href="jimsimons/index.html#edges" class="toc-link">
+            <h2>2. Operator Edges</h2>
+        </a>
+
+        <a href="jimsimons/index.html#decisions" class="toc-link">
+            <h2>3. Signature Decisions</h2>
+        </a>
+
+        <a href="jimsimons/index.html#pressure" class="toc-link">
+            <h2>4. Pressure Node</h2>
+        </a>
+
+        <a href="jimsimons/index.html#map" class="toc-link">
+            <h2>5. Operator Map</h2>
+        </a>
+
+        <a href="jimsimons/index.html#meta" class="toc-link">
+            <h2>6. Meta Insight</h2>
+        </a>
+
+        <a href="jimsimons/index.html#archive" class="toc-link">
+            <h2>7. Archive</h2>
+        </a>
+
+    </nav>
+    <p class="spotify-cta">
+        <a href="https://open.spotify.com/episode/2EKx0PyZpzAwPluFTH8i5D?si=Pf77_0B5QqWmd5JXZXjrQA" target="_blank" class="spotify-link">
+            <img src="img/lg-spotify.svg" alt="spotify logo" class="spotify-logo">
+            <span>Listen for Operator #001 on Spotify</span>
+        </a>
+    </p>
+</div>
+
+
+
+<footer class="so-footer">
+    Din Amri for rhentap • Built in Manchester
+</footer>
+
+<!-- SCROLL DIMMING LOGIC -->
+<script>
+document.addEventListener('scroll', () => {
+    const hero = document.querySelector('.hero-bg');
+    const maxFade = 0.6;
+    const minFade = 0.25;
+
+    const scrollRange = 400;
+    const scrolled = Math.min(window.scrollY, scrollRange);
+
+    const newOpacity = maxFade - (scrolled / scrollRange) * (maxFade - minFade);
+    if (hero) hero.style.opacity = newOpacity;
+});
+</script>
+
+</body>
+</html>

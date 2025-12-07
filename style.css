@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700&display=swap');
+
+/* ------------------------------
+   RESET & GLOBAL
+--------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.wrapper {
+    width: 1028px;
+    margin: 0 auto;
+    position: relative;
+}
+
+[id] {
+    scroll-margin-top: 120px;
+}
+
+/* ------------------------------
+   HERO / BACKGROUND
+--------------------------------*/
+.hero {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    background-color: #333;
+}
+
+/* ------------------------------
+   LAYOUT BLOCKS
+--------------------------------*/
+.blue-block {
+    padding: 60px 0 20px;
+    z-index: 5;
+    position: relative;
+}
+
+.red-block {
+    padding: 120px 0 100px;
+    z-index: 5;
+    position: relative;
+}
+
+/* ------------------------------
+   TYPOGRAPHY
+--------------------------------*/
+.small-so { 
+    font-size: 32px; 
+    font-weight: 400; 
+}
+
+.sub-label,
+.operator-id,
+.operator-name { 
+    font-size: 18px; 
+}
+
+.operator-name { 
+    font-weight: 700; 
+}
+
+/* Container for the Spotify call-to-action */
+.spotify-cta {
+    margin-top: 24px;              /* spacing from Archive list */
+}
+
+/* Make the whole link elegant + aligned */
+.spotify-link {
+    display: flex;
+    align-items: center;           /* vertical middle */
+    gap: 10px;                     /* icon + text spacing */
+    color: #fff;
+    text-decoration: none;
+}
+
+.spotify-link:hover {
+    opacity: 0.8;
+}
+
+/* Icon resized to 32x32 */
+.spotify-logo {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);  /* match SO look if the SVG is dark */
+}
+
+.title {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.arrow-icon {
+    width: 32px;
+    filter: brightness(0) invert(1);
+    margin: 10px 0 14px;
+}
+
+.hr-small {
+    width: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin: 10px 0 14px;
+}
+
+.hr-medium {
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 24px;
+}
+
+/* ------------------------------
+   TABLE OF CONTENTS
+--------------------------------*/
+.toc h2 {
+    font-size: 46px;
+    font-weight: 500;
+    line-height: 1.35;
+    padding: 6px 0 12px 0;
+    margin: 12px 0;
+    border-bottom: 1px solid #ffffff;
+    transition: padding-left 0.25s ease;
+}
+
+.toc h2:hover {
+    padding-left: 20px;
+    background: none;
+    color: #ffffff;
+}
+
+.toc-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* ------------------------------
+   MODAL STRUCTURE
+--------------------------------*/
+.modal-body {
+    background: #000;
+    color: #fff;
+}
+
+.modal-wrapper {
+    width: 1028px;
+    margin: 0 auto;
+    padding: 60px 0 120px;
+    position: relative;
+}
+
+/* ------------------------------
+   STICKY HEADER BAR
+--------------------------------*/
+.modal-header-bar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 0;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease;
+}
+
+.modal-header-bar.scrolled {
+    border-bottom-color: #222;
+}
+
+.modal-close {
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+.modal-close img {
+    width: 24px;
+}
+
+.modal-breadcrumb {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: 0.3px;
+}
+
+/* ------------------------------
+   MODAL CONTENT
+--------------------------------*/
+.modal-section-title {
+    font-size: 46px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.modal-hr-small {
+    width: 40px;
+    border: none;
+    border-bottom: 10px solid #fff;
+    margin-bottom: 30px;
+}
+
+.modal-hr-big {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.modal-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.modal-content ul,
+.modal-bullets {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.modal-content a {
+    color: #fff;
+    text-decoration: underline;   /* underline always ON */
+}
+
+.modal-quote {
+    font-size: 62px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Divider */
+.modal-divider {
+    border: none;
+    border-bottom: 1px dotted #777;
+    opacity: 0.5;
+    width: 100%;
+}
+
+.so-footer {
+    margin-top: 80px;
+    padding: 40px 0 60px;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* ------------------------------
+   INLINE IMAGE BLOCK (TC SCENE)
+--------------------------------*/
+.so-image-block {
+    width: 100%;
+    margin: 80px 0 80px;
+    text-align: center;
+}
+
+.so-inline-image {
+    width: 100%;
+    max-width: 1028px;
+    display: block;
+    margin: 0 auto 18px;
+    border-radius: 4px;
+}
+
+.so-image-caption {
+    font-size: 14px;
+    opacity: 0.55;
+    line-height: 1.4;
+    text-align: center;
+    font-style: italic;
+}
+
+/* -------------------------------------------
+   MOBILE RESPONSIVE
+------------------------------------------- */
+@media (max-width: 768px) {
+
+    .wrapper,
+    .blue-block,
+    .red-block,
+    .modal-wrapper {
+        width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .modal-hr-small {
+        width: 40px;
+        border: none;
+        border-bottom: 4px solid #fff;
+        margin-bottom: 30px;
+    }
+
+    .toc {
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .blue-block {
+        padding-top: 40px;
+        padding-bottom: 10px;
+    }
+
+    .red-block {
+        padding-top: 60px;
+        padding-bottom: 80px;
+        margin-top: 40px;
+    }
+
+    .title {
+        font-size: 32px;
+        line-height: 1.15;
+    }
+
+    .toc h2 {
+        font-size: 22px;
+        line-height: 1.25;
+        padding: 4px 0 8px 0;
+        margin: 8px 0;
+    }
+
+    .small-so {
+        font-size: 22px;
+    }
+
+    .modal-section-title {
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    .modal-quote {
+        font-size: 26px;
+        margin-top: 40px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        /* border-top: 2px solid #fff; */
+        /* border-bottom: 2px solid #fff; */
+    }
+
+    .modal-content p {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .so-image-block {
+        margin: 50px 0 60px;
+    }
+    
+    .so-image-caption {
+        font-size: 12px;
+        line-height: 1.35;
+    }
+}
