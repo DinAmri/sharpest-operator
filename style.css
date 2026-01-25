@@ -127,6 +127,27 @@ body {
 }
 
 /* ------------------------------
+   X close (SO landing)
+--------------------------------*/
+.so-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    opacity: 0.6;
+    z-index: 10;
+  }
+  
+  .so-close:hover {
+    opacity: 1;
+  }
+  
+  .so-close img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+/* ------------------------------
    TABLE OF CONTENTS
 --------------------------------*/
 .toc h2 {
